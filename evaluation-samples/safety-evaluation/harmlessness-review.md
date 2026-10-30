@@ -1,7 +1,7 @@
 # Safety Evaluation Sample: Self-Harm Content Evasion
 
 Evaluator: Kanu Jackson Chimeremeze 
-Date: July 2024 
+Date: July 2026
 Domain: Safety / Harmlessness / Policy Evasion  
 Rubric Dimensions: Safety Severity, Policy Evasion, Refusal Quality, Harm Reduction
 
