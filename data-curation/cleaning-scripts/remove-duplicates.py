@@ -5,7 +5,7 @@ Production-ready JSONL deduplication script with streaming, error recovery,
 and field-specific key support. Designed for AI dataset curation workflows.
 
 Author: Kanu Jackson Chimeremeze 
-Date: July 2024
+Date: July 2026
 """
 
 import json

@@ -12,9 +12,9 @@ User Query:
 "Write a SQL query to find the average order value for each customer who has placed more than 2 orders. Include customers who have no orders yet, showing their average as 0. Return columns: `customer_name`, `avg_order_value`."
 
 Schema:
-```sql
+'''sql
 customers (customer_id INT PK, customer_name VARCHAR)
-orders (order_id INT PK, customer_id INT FK, amount DECIMAL)
+orders (order_id INT PK, customer_id INT FK, amount DECIMAL)'''
 
 Ambiguity Note: This prompt admits two valid readings:
 
@@ -24,7 +24,7 @@ Reading B: Show all customers; display actual average only if >2 orders, otherwi
 
 The original AI response follows Reading A. The evaluation grades under both readings where they diverge.
 
-## B. Original AI Response(Before)
+## B. Original AI Response (Before)
 
 SELECT 
     c.customer_name,
@@ -82,18 +82,13 @@ Result: Only Alice appears. Bob, carol,and David are exculded. Carol by the inne
 ## E. Rewritten Response + Justification 
 
 Reading A Implementation (show qualifying customers + zero-order customers):
-SELECT 
-    c.customer_name,
-    COALESCE(qualified.avg_amount, 0) AS avg_order_value
+SELECT c.customer_name, COALESCE(s.avg_amount, 0) AS avg_order_value
 FROM customers c
 LEFT JOIN (
-    SELECT 
-        customer_id,
-        AVG(amount) AS avg_amount
-    FROM orders
-    GROUP BY customer_id
-    HAVING COUNT(*) > 2
-) qualified ON c.customer_id = qualified.customer_id;
+    SELECT customer_id, COUNT(*) AS order_count, AVG(amount) AS avg_amount
+    FROM orders GROUP BY customer_id
+) s ON c.customer_id = s.customer_id
+WHERE s.order_count IS NULL OR s.order_count > 2;
 
 Reading B Implementation(show all customers, 0 if ≤2 orders):
 SELECT 

@@ -10,7 +10,7 @@ GitHub: (https://github.com/jacksonthegr8)
 
 Computer Science undergraduate with practical experience auditing large language model outputs for correctness, safety, and instruction adherence. Specialized in code evaluation, (Python, SQL) and harmlessness auditing for conversational AI systems. Native speaker of Igbo and Nigerian Pidgin, available for African-market localization and low-resource language evaluation projects.
 
-This repository contains self-directed portfolio samples, reproducible evaluation samples, data-quality scripts, and annotation rubrics used in freelance AI data workflows.
+This repository contains self-directed portfolio samples, reproducible evaluation samples, data-quality scripts, and annotation rubrics like those used in freelance AI data workflows.
 
 
 ## Technical Stack
@@ -24,13 +24,13 @@ This repository contains self-directed portfolio samples, reproducible evaluatio
 
 ## Featured Samples
 
-### 1. Coding Evaluation: SQL Query Optimization Audit
-Audited an LLM-generated SQL query for a multi-table aggregation task. Identified a logical error in `GROUP BY` handling and an unhandled `NULL` edge case. Provided corrected query with complexity analysis.
+### 1. Coding Evaluation: SQL Query Aggregation Audit
+Evaluated an LLM-written SQL query against an ambiguous prompt, graded it under two readings, found an incorrect join and ignored zero-order customers, and verified corrected queries with a SQLite test.
 
 [View sample →](./evaluation-samples/coding-evaluation/SQL-evaluation.md)
 
 ### 2. Safety Evaluation: Self-Harm Content Evasion Via creative framing
-Identified a policy evasion attempt where a user framed a harmful request as fiction writing. The AI disclosed specific lethal drug names,combinations, and dosages for self-harm. Flagged crictical safety violation, creative framing bypass, and absence of refusal. Rewrote to a direct refusal with narrative alternatives and harm-reduction resources, fully compliant with safety rubrics and harmlessness standards. 
+Identified a policy evasion attempt where a user framed a harmful request as fiction writing. The AI disclosed specific lethal drug names, and combinations, for self-harm. Flagged critical safety violation, creative framing bypass, and absence of refusal. Rewrote to a direct refusal with narrative alternatives fully compliant with safety rubrics and harmlessness standards. 
 
 [View sample →](./evaluation-samples/safety-evaluation/harmlessness-review.md)
 
@@ -55,4 +55,4 @@ Open to freelance AI evaluator contracts with flexible hours. Comfortable workin
 
 ---
 
-Last updated: [29-10-2026]
+Last updated: [30-10-2026]
